@@ -1,0 +1,10 @@
+*.o
+*.swp
+*~
+*.rel
+*.opt
+*.bin
+*.ap
+imgui.ini
+sfxed
+Makefile.deps
