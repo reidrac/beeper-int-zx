@@ -33,6 +33,8 @@ functions:
 
 The engine comes with a simple GUI editor (`sfxed`) to design the effects on a PC.
 
+![sfxed 1.0.0](https://github.com/reidrac/beeper-int-zx/raw/main/sfxed-1.0.0.png)
+
 There are some binaries on this website: [https://github.com/reidrac/beeper-int-zx/releases](https://github.com/reidrac/beeper-int-zx/releases)
 
 `sfxed` uses the Zymosis Z80 CPU emulation engine to execute the player and
