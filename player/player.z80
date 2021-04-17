@@ -6,49 +6,49 @@ ISR_TABLE_START_JP = 0xfdfd
 EFX_TABLE_ADDR = 32000
 EFX_IN_ADDR = EFX_TABLE_ADDR - 1
 
-.area	_HOME
-.area	_CODE
-.area	_INITIALIZER
+.area   _HOME
+.area   _CODE
+.area   _INITIALIZER
 .area   _GSINIT
 .area   _GSFINAL
 
-.area	_DATA
-.area	_INITIALIZED
-.area	_BSEG
+.area   _DATA
+.area   _INITIALIZED
+.area   _BSEG
 .area   _BSS
 .area   _HEAP
 
 .area   _CODE
 
 _main::
-	di
-	ld sp, #0
-	ei
+        di
+        ld sp, #0
+        ei
 
         ld hl, #EFX_TABLE_ADDR
         ld (sfx_data), hl
 
         ld hl, #ISR_TABLE_START
-	ld (hl), #ISR_TABLE_VALUE
+        ld (hl), #ISR_TABLE_VALUE
         ld e, l
         ld d, h
-	inc de
-	ld bc, #257
-	ldir
+        inc de
+        ld bc, #257
+        ldir
 
-	ld a, #ISR_TABLE_START_LO
-	ld i, a
-	im 2
+        ld a, #ISR_TABLE_START_LO
+        ld i, a
+        im 2
 
-	ld hl, #ISR_TABLE_START_JP
-	ld de, #isr
-	ld a, #0xc3
-	ld (hl), a
-	inc hl
-	ld (hl), e
-	inc hl
-	ld (hl), d
-	ei
+        ld hl, #ISR_TABLE_START_JP
+        ld de, #isr
+        ld a, #0xc3
+        ld (hl), a
+        inc hl
+        ld (hl), e
+        inc hl
+        ld (hl), d
+        ei
 
         ld a, (EFX_IN_ADDR)
         ld l, a
@@ -70,22 +70,22 @@ wait::
         halt
 
 isr:
-	ex af,af
-	push hl
+        ex af,af
+        push hl
         push ix
-	push iy
-	push bc
-	push de
+        push iy
+        push bc
+        push de
 
         call _beeper_play
 
-	pop de
-	pop bc
-	pop iy
-	pop ix
-	pop hl
-	ex af,af
-	ei
+        pop de
+        pop bc
+        pop iy
+        pop ix
+        pop hl
+        ex af,af
+        ei
 
         ret
 
