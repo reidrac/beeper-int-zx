@@ -47,14 +47,14 @@ The editor can export the effect data in binary form, so it can be included in
 any assembler project, and as a C include file (for example to be used with
 SDCC).
 
-Check the `example` directory for an example.
+Check the `example` directory for a sample.
 
 ## Building the player
 
 Check the README file in `sdcc` directory.
 
 The code is provided in assembler for SDCC, to be built as a library. It should
-be easay to convert to other assemblers.
+be easy to convert to other assemblers.
 
 ## Building the editor
 
