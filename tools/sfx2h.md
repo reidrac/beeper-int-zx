@@ -41,11 +41,11 @@ extern const struct beeper_sfx sounds[];
 #endif // SOUNDS_H_
 ```
 
-You can include it normally on any C file, just remember to define `LOCAL`
+You can include it normally in any C file, just remember to define `LOCAL`
 before included in the module containing the data (only once!).
 
 ## CAVEATS
 
-* Is not perfuming exhaustive checks on the effects' names or the provided id
+* Is not performing exhaustive checks on the effects' names or the provided id
 * `LOCAL` is not undefined after used
 
